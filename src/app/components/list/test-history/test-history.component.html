@@ -1,0 +1,11 @@
+<novo-modal data-automation-id="list-modal">
+    <header title="Test History" icon="clock-arrow" theme="neutral" subTitle="{{title}}">
+      <utils>
+        <util-action icon="times" (click)="close()"></util-action>
+      </utils>
+    </header>
+    <section>
+      <novo-activity-table [columns]="columns" [activityService]="activityService" [displayedColumns]="displayedColumns" [paginationOptions]="paginationOptions" ></novo-activity-table>
+    </section>
+    <button theme="standard" (click)="close()" data-automation-id="list-modal-close">Close</button>
+  </novo-modal>

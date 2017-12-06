@@ -12,6 +12,7 @@ import { ListComponent } from './components/list/list.component';
 import { MainPageComponent } from './components/main-page/main-page.component';
 import { PreferencesComponent } from './components/preferences/preferences.component';
 import { SummarySidebarComponent } from './components/summary-sidebar/summary-sidebar.component';
+import { TestHistoryComponent } from './components/list/test-history/test-history.component';
 
 // Services
 import { TestService } from './services/test/test.service';
@@ -23,7 +24,7 @@ import {
     NovoModalModule, NovoModalRef, FormUtils, NovoFormModule, NovoLabelService,
     NovoToastService, ComponentUtils, NovoModalService, NovoHeaderModule, NovoButtonModule,
     NovoSelectModule, NovoFormExtrasModule, NovoElementsModule, NovoTableModule, NovoTableExtrasModule,
-    NovoLoadingModule } from 'novo-elements';
+    NovoLoadingModule, NovoElementProviders } from 'novo-elements';
 
 import { TeamPageComponent } from './components/team-page/team-page.component';
 import { SummaryTableComponent } from './components/summary-table/summary-table.component';
@@ -40,7 +41,8 @@ import { TotalsComponent } from './components/totals/totals.component';
     SummarySidebarComponent,
     TeamPageComponent,
     SummaryTableComponent,
-    TotalsComponent
+    TotalsComponent,
+    TestHistoryComponent
   ],
   imports: [
     BrowserModule,
@@ -56,6 +58,7 @@ import { TotalsComponent } from './components/totals/totals.component';
     NovoLoadingModule,
     NovoTableModule,
     NovoTableExtrasModule,
+    NovoElementProviders.forRoot(),
     RouterModule.forRoot([
       {
         path: '',
@@ -71,7 +74,7 @@ import { TotalsComponent } from './components/totals/totals.component';
       }
     ])
   ],
-  entryComponents: [PreferencesComponent],
+  entryComponents: [PreferencesComponent, TestHistoryComponent],
   providers: [
     TestService,
     TeamService,

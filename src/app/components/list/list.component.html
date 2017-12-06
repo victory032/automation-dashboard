@@ -7,7 +7,8 @@
                 <item-title>{{test.name}}</item-title>
             </item-header>
             <item-end>
-                <button *ngIf="test.result === 'Failed'" tooltip="Mark as Bug" tooltipBounce="true" theme="icon" icon="caution" (click)="markAsBug(test)"></button>
+                <button tooltip="View Test History" tooltipBounce="true" theme="icon" icon="clock-arrow" (click)="viewHistory(test)"></button>
+                <button *ngIf="test.result === 'Failed'" tooltip="Mark as Bug" tooltipBounce="true" theme="icon" icon="caution" (click)="markAsBug(test)"></button>                
                 <button *ngIf="test.result === 'Bug'" tooltip="Mark as Failed" tooltipBounce="true" theme="icon" icon="caution" (click)="markAsFailed(test)"></button>
                 <button theme="icon" icon="delete-o" tooltip="Hard Delete Test" tooltipBounce="true" (click)="delete(test)"></button>
             </item-end>

@@ -24,7 +24,7 @@ export class SidebarComponent implements OnInit {
   refreshValue: any;
   sidebarTotals: any;
   showTotals = false;
-  toggleTitle: string = "View Totals";
+  toggleTitle: string = 'View Totals';
 
   constructor(private testService: TestService, private teamService: TeamService, private resultService: ResultService,
               private projectService: ProjectService, private formUtils: FormUtils, private modalService: NovoModalService,
@@ -62,11 +62,13 @@ export class SidebarComponent implements OnInit {
     returnControls.push(new TextBoxControl({
       key: 'testFilter',
       value: '',
+      type: 'text',
       placeholder: 'Search Tests...'
     }));
     returnControls.push(new TextBoxControl({
       key: 'suiteFilter',
       value: '',
+      type: 'text',
       placeholder: 'Search Suites...'
     }));
     returnControls.push(new SelectControl({
@@ -117,9 +119,9 @@ export class SidebarComponent implements OnInit {
     this.sidebarForm.valueChanges.next(this.sidebarForm.value);
     this.showTotals = !this.showTotals;
     if (this.showTotals === true) {
-      this.toggleTitle = "View Menu";
+      this.toggleTitle = 'View Menu';
     } else {
-      this.toggleTitle = "View Totals";
+      this.toggleTitle = 'View Totals';
     }
   }
 }

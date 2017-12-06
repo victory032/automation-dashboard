@@ -17,6 +17,11 @@ export class TestService {
     return this.http.get(url).map(res => res.json());
   }
 
+  public getTestData(testId: Number) {
+    const url = `${config.backendURL}test/query?where=${JSON.stringify({'_id': testId})}&key=name&limit=100&sort={%22name%22:1}&fields={}`;
+    return this.http.get(url).map(res => res.json());
+  }
+
   create(body: Object) {
     const url = `${config.backendURL}test/create`;
     return this.http.post(url, body).map(res => res.json());
